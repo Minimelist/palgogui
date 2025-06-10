@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Placeholder from './Placeholder.jpeg';
+import Header from './components/header/Header.js';
+import Footer from './components/footer/Footer.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header logo={<img src={Placeholder} className="logo" alt="Logo" />} title="P.ALGO | Your Personal Trading Pal"/>
+      <body><br/><br/><br/><br/><br/><br/></body>
+      <Footer year="2025"/>
     </div>
   );
 }
 
 export default App;
+

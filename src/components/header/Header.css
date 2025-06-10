@@ -1,0 +1,26 @@
+.header{
+    background-color: #333;
+    color: white;
+    padding: 1%;
+    width: auto;
+    height:auto;
+    display:flex;
+    align-items: center;
+}
+.logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1%;
+}
+.logo{
+    border-radius:50%;
+    width:50px;
+    pointer-events: none;
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1%;
+}
