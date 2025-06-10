@@ -2,11 +2,13 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr auto;
-    width: 100%;
+    width: auto;
     height: 100%;
     box-sizing: border-box;
     grid-template-areas: 
     "palgo overview score headlines";
+    border-bottom: 5px solid #ccc;
+
 }
 
 .palgorating-container{

@@ -3,7 +3,7 @@ import "./Assetscore.css";
 function Assetscore(props) {
     return (
         <div className="assetscore">
-            <div className="assetscore-container">
+            <div className="assetscore-innercontainer">
                 <h2>Asset Score</h2>
                 <p>Technical Score: {props.technicalscore}</p>
                 <p>Financial Score: {props.financialscore}</p>

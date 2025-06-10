@@ -4,7 +4,7 @@ import "./Assetheadlines.css";
 function Assetheadlines(props) {
     return (
         <div className="assetheadlines">
-            <div className="assetheadlines-container">
+            <div className="assetheadlines-innercontainer">
                 <h2>Asset Headlines</h2>
                 <ul>
                     {props.headlines.map((headline, index) => (
