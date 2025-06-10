@@ -6,6 +6,7 @@
     height:auto;
     display:block;
     align-items: center;
+    clear:both;
 }
 .footer-content{
     border-top:1px solid white;
