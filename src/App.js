@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header logo={<img src={Placeholder} className="logo" alt="Logo" />} title="P.ALGO | Your Personal Trading Pal"/>
-      <body><br/><br/><br/><br/><br/><br/></body>
+      <body><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></body>
       <Footer year="2025"/>
     </div>
   );
