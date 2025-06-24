@@ -1,0 +1,18 @@
+.footer{
+    background-color: #333;
+    color: white;
+    padding: 1%;
+    width: auto;
+    height:auto;
+    display:block;
+    align-items: center;
+    clear:both;
+}
+.footer-content{
+    border-top:1px solid white;
+    margin-top:1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1%;
+}

@@ -1,0 +1,39 @@
+.assetcontainer-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    width: auto;
+    height: 100%;
+    box-sizing: border-box;
+    grid-template-areas: 
+    "palgo overview score headlines";
+    border-bottom: 5px solid #ccc;
+
+}
+
+.palgorating-container{
+    grid-area: palgo;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.assetoverview-container{
+    grid-area: overview;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.assetscore-container{
+    grid-area: score;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.assetheadlines-container{
+    grid-area: headlines;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
