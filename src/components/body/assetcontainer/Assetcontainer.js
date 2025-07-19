@@ -5,7 +5,7 @@ import Assetscore from "./assetscores/Assetscore.js";
 import Palgorating from "./palgorating/Palgorating.js";
 
 function Assetcontainer(props) {
-
+    
     return (
         <div className="assetcontainer">
             <div className="assetcontainer-container">

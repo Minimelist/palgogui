@@ -32,7 +32,7 @@ pool.query('SELECT NOW()', (err, res) => {
 app.get('/api/data', async (req, res) => {
   try {
     // Replace 'your_table' with your actual table name
-    const { rows } = await pool.query('SELECT * FROM palgotest LIMIT 100');
+    const { rows } = await pool.query('SELECT * FROM demodata LIMIT 100');
     res.json(rows);
   } catch (err) {
     console.error(err);
