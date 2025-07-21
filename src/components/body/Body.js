@@ -1,7 +1,7 @@
 import "./Body.css";
 import Sidebar from './sidebar/Sidebar.js';
 import Assetcontainer from "./assetcontainer/Assetcontainer.js";
-import DataDisplay from '../DataDisplay.js';
+import DataDisplay from './DataDisplay.js';
 
 function Body() {
     return (

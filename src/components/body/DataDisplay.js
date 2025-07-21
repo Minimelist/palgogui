@@ -1,7 +1,7 @@
 // src/components/DataDisplay.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Assetcontainer from './body/assetcontainer/Assetcontainer.js'; // Import the Assetcontainer component
+import Assetcontainer from './assetcontainer/Assetcontainer.js'; // Import the Assetcontainer component
 
 function DataDisplay() {
   const [data, setData] = useState([]);

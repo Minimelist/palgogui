@@ -3,7 +3,7 @@ import Placeholder from './Placeholder.jpeg';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
 import Body from './components/body/Body.js';
-import DataDisplay from './components/DataDisplay.js';
+import DataDisplay from './components/body/DataDisplay.js';
 
 function App() {
   return (
