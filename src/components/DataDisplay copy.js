@@ -1,7 +1,7 @@
 // src/components/DataDisplay.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Assetcontainer from './body/assetcontainer/Assetcontainer.js'; // Import the Assetcontainer component
+import DataDisplayRow from './DataDisplayRow.js';
 
 function DataDisplay() {
   const [data, setData] = useState([]);
@@ -22,14 +22,28 @@ function DataDisplay() {
   if (loading) return <div>Loading...</div>;
   if (!data.length) return <div>No data found.</div>;
 
-  console.log('API data:', data);
-
   return (
     <div>
-      {data.map((row) => {
-        console.log('Mapping row:', row); // Check each row
-        return <Assetcontainer key={row.id} rowData={row} />;
-      })}
+      <h2>PostgreSQL Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>PalgoRating</th>
+            <th>TechnicalScore</th>
+            <th>FundamentalScore</th>
+            <th>MacroScore</th>
+            <th>MicroScore</th>
+            <th>AssetName</th>
+            {/* Add more headers to match your row component */}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row) => (
+            <DataDisplayRow key={row.id} rowData={row} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

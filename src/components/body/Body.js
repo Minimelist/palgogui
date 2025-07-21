@@ -1,6 +1,7 @@
 import "./Body.css";
 import Sidebar from './sidebar/Sidebar.js';
 import Assetcontainer from "./assetcontainer/Assetcontainer.js";
+import DataDisplay from '../DataDisplay.js';
 
 function Body() {
     return (
@@ -8,9 +9,7 @@ function Body() {
             {/* <Sidebar filter="This is the side bar"/> */}
             <div className="body-container">
                 <div className="content">
-                    <Assetcontainer />
-                    <Assetcontainer />
-                    <Assetcontainer />
+                    <DataDisplay />
                 </div>
             </div>
         </div>

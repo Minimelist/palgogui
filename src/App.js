@@ -11,7 +11,6 @@ function App() {
       <Header logo={<img src={Placeholder} className="logo" alt="Logo" />} title="P.ALGO | Your Personal Trading Pal"/>
       <Body/>
       <Footer year="2025"/>
-      <DataDisplay />
     </div>
   );
 }
