@@ -8,7 +8,7 @@ function DataDisplay() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
+    axios.get('http://localhost:5000/assetcontainer') // Adjust the URL if necessary
       .then(response => {
         setData(response.data);
         setLoading(false);
