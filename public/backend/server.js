@@ -34,14 +34,23 @@ pool.query('SELECT NOW()', (err, res) => {
 app.get('/assetcontainer', async (req, res) => {
   try {
     // Replace 'with actual table name
-    const { rows } = await pool.query('SELECT * FROM demodata LIMIT 100');
+    const { rows } = await pool.query('SELECT * FROM demodata ORDER BY palgorating DESC LIMIT 100 ');
     res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
+// API endpoint for PAWM Settings
+app.get('/pawmsettings', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM pawmsettings');
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 // API endpoint for Palgo Settings
 app.get('/palgosettings', async (req, res) => {
   try {

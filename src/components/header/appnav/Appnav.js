@@ -15,6 +15,7 @@ function Appnav(props) {
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/portfolio">Portfolio</NavLink>
             <NavLink to="/watchlist">Watchlist</NavLink>
+            <NavLink to="/pawm">PAWM Settings</NavLink>
             <NavLink to="/settings">P.ALGO Settings</NavLink>
         </nav>
     )
