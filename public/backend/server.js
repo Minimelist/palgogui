@@ -45,8 +45,7 @@ app.get('/assetcontainer', async (req, res) => {
 // API endpoint for Palgo Settings
 app.get('/palgosettings', async (req, res) => {
   try {
-    // Replace 'with actual table name
-    const { rows } = await pool.query('SELECT * FROM assetindicatorsettings LIMIT 100');
+    const { rows } = await pool.query('SELECT * FROM palgosettings');
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -54,6 +53,27 @@ app.get('/palgosettings', async (req, res) => {
   }
 });
 
+// UPDATE
+// app.put('/palgosettings', async (req, res) => {
+//   try {
+//     const { pbbtop, pbbbot, pstotop, pstobot } = req.body;
+    
+//     // Update the existing row (assuming one exists)
+//     const { rows } = await pool.query(
+//       'UPDATE assetindicatorsettings SET pbbtop = $1, pbbbot = $2, pstotop = $3, pstobot = $4 RETURNING *',
+//       [pbbtop, pbbbot, pstotop, pstobot]
+//     );
+    
+//     if (rows.length === 0) {
+//       return res.status(404).json({ error: 'No settings found to update' });
+//     }
+    
+//     res.json(rows[0]);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 //ADD MORE API ENDPOINTS AS NEEDED
 // API endpoint END
 app.listen(port, () => {
