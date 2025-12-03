@@ -3,7 +3,6 @@ import Assetoverview from './assetoverview/Assetoverview.js';
 import Assetheadlines from "./assetheadlines/Assetheadlines.js";
 import Assetscore from "./assetscores/Assetscore.js";
 import Palgorating from "./palgorating/Palgorating.js";
-import { formatDate } from '../../../utils/dateFormatter.js';
 
 function Assetcontainer(props) {
   // Safely access rowData with default empty object
@@ -11,44 +10,36 @@ function Assetcontainer(props) {
   
   // Safely destructure with default values
   const {
-    ticker,
-    company_name,
-    close_price,
-    palgo_bb,
-    date_added,
+    id ,
+    palgorating,
+    technicalscore,
+    fundamentalscore,
+    macroscore,
+    microscore,
+    assetname
   } = rowData;
 
   return (
     <div className="assetcontainer">
       <div className="assetcontainer-container">
         <div className="palgorating-container">
-          {/* <Palgorating palgorating={palgorating} /> */}
-          <Palgorating 
-            palgorating="0" 
-            date_added={formatDate(date_added)}
-          />
+          <Palgorating palgorating={palgorating} />
         </div>
         <div className="assetoverview-container">
           <Assetoverview
-            assetName={company_name}
-            assetSymbol={ticker}
-            // assetType="Stock" // Placeholder, replace with actual data if available
-            currentValue={close_price}
+            assetName={assetname || 'Apple Inc.'}
+            assetSymbol="APPL"
+            assetType="Stock"
+            currentValue="150.00"
             exchange="NASDAQ"
           />
         </div>
         <div className="assetscore-container">
-          {/* <Assetscore
+          <Assetscore
             technicalscore={technicalscore}
             financialscore={fundamentalscore}
             macroscore={macroscore}
             microscore={microscore}
-          /> */}
-          <Assetscore
-            technicalscore={palgo_bb}
-            financialscore="0"
-            macroscore="0"
-            microscore="0"
           />
         </div>
         <div className="assetheadlines-container">

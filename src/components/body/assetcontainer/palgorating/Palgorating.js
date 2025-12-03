@@ -1,10 +1,11 @@
 import "./Palgorating.css";
-function Palgorating({ palgorating}) {
+function Palgorating({palgorating, date_added}) {
   return (
     <div className="palgorating">
       <div className="palgorating-innercontainer">
         <h2>Palgorating</h2>
-        <p>Overall Rating: {palgorating}</p>
+        <p>PCS Rating: {palgorating}</p>
+        <p>Date Added: {date_added}</p>
       </div>
     </div>
   );

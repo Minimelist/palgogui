@@ -31,16 +31,39 @@ pool.query('SELECT NOW()', (err, res) => {
 // API endpoint START
 
 // API endpoint for Assetcontainer Data
+// app.get('/assetcontainer', async (req, res) => {
+//   try {
+//     // Replace 'with actual table name
+//     const { rows } = await pool.query('SELECT * FROM demodata ORDER BY palgorating DESC LIMIT 100 ');
+//     res.json(rows);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 app.get('/assetcontainer', async (req, res) => {
   try {
-    // Replace 'with actual table name
-    const { rows } = await pool.query('SELECT * FROM demodata ORDER BY palgorating DESC LIMIT 100 ');
+    const { rows } = await pool.query(`
+      SELECT * 
+      FROM nt20_palgo 
+      WHERE date_added = CURRENT_DATE
+    `);
     res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+// app.get('/assetcontainer', async (req, res) => {
+//   try {
+//     // Replace 'with actual table name
+//     const { rows } = await pool.query('SELECT * FROM nt20_palgo');
+//     res.json(rows);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 // API endpoint for PAWM Settings
 app.get('/pawmsettings', async (req, res) => {
   try {
@@ -55,6 +78,16 @@ app.get('/pawmsettings', async (req, res) => {
 app.get('/palgosettings', async (req, res) => {
   try {
     const { rows } = await pool.query('SELECT * FROM palgosettings');
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/dashboard', async (req, res) => {
+  try {
+    const { rows } = await pool.query('SELECT * FROM nasdaq LIMIT 2');
     res.json(rows);
   } catch (err) {
     console.error(err);

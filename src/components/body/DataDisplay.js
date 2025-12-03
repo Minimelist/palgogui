@@ -1,7 +1,7 @@
 // src/components/DataDisplay.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Assetcontainer from './assetcontainer/Assetcontainer.js'; // Import the Assetcontainer component
+import Assetcontainerdev from './assetcontainer/Assetcontainer.js'; // Import the Assetcontainer component
 
 function DataDisplay() {
   const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ function DataDisplay() {
     <div>
       {data.map((row) => {
         console.log('Mapping row:', row); // Check each row
-        return <Assetcontainer key={row.id} rowData={row} />;
+        return <Assetcontainerdev key={row.id} rowData={row} />;
       })}
     </div>
   );

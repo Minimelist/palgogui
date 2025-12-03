@@ -3,7 +3,7 @@ import Placeholder from './Placeholder.jpeg';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
 import Body from './components/body/Body.js';
-import Dashboard from './components/body/dashboard/Dashboard.js';
+import Dashboard from './components/body/dashboard/nasdaq/Dashboard.js'; //have to change this when adding more dashboards
 import Portfolio from './components/body/portfolio/Portfolio.js';
 import Watchlist from './components/body/watchlist/Watchlist.js';
 import Settings from './components/body/settings/Settings.js';
