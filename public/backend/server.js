@@ -47,7 +47,8 @@ app.get('/assetcontainer', async (req, res) => {
       SELECT * 
       FROM nt20_palgo 
       WHERE date_added = CURRENT_DATE
-    `);
+    `); 
+    // have to use JOIN to get the details for each asset and take the OGS or other strategy table.
     res.json(rows);
   } catch (err) {
     console.error(err);
