@@ -12,11 +12,11 @@ app.use(express.json());
 
 // PostgreSQL connection
 const pool = new Pool({
-  user: process.env.DB_USER ,
-  host: process.env.DB_HOST ,
-  database: process.env.DB_NAME ,
-  password: process.env.DB_PASSWORD ,
-  port: process.env.DB_PORT ,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
 
 // Test database connection
@@ -44,10 +44,30 @@ pool.query('SELECT NOW()', (err, res) => {
 app.get('/assetcontainer', async (req, res) => {
   try {
     const { rows } = await pool.query(`
-      SELECT * 
-      FROM nt20_palgo 
-      WHERE date_added = CURRENT_DATE
-    `); 
+      SELECT 
+        n.ticker,
+        n.company_name,
+        n.close_price,
+        n.palgo_bb,
+        n.palgo_sto,
+        n.palgo_atr,
+        n.palgo_rsi,
+        n.palgo_macd,
+        n.palgo_nop,
+        n.palgo_she,
+        n.palgo_investing,
+        n.palgo_candlestick,
+        o.technical_score,
+        o.fundamental_score,
+        o.micro_score,
+        o.macro_score,
+        o.pcs,
+        n.date_added
+      FROM nt20_palgo n
+      INNER JOIN ogs_palgo o ON n.ticker = o.ticker 
+          AND o.date_added = n.date_added
+      ORDER BY o.pcs DESC;
+    `);
     // have to use JOIN to get the details for each asset and take the OGS or other strategy table.
     res.json(rows);
   } catch (err) {
@@ -100,17 +120,17 @@ app.get('/dashboard', async (req, res) => {
 // app.put('/palgosettings', async (req, res) => {
 //   try {
 //     const { pbbtop, pbbbot, pstotop, pstobot } = req.body;
-    
+
 //     // Update the existing row (assuming one exists)
 //     const { rows } = await pool.query(
 //       'UPDATE assetindicatorsettings SET pbbtop = $1, pbbbot = $2, pstotop = $3, pstobot = $4 RETURNING *',
 //       [pbbtop, pbbbot, pstotop, pstobot]
 //     );
-    
+
 //     if (rows.length === 0) {
 //       return res.status(404).json({ error: 'No settings found to update' });
 //     }
-    
+
 //     res.json(rows[0]);
 //   } catch (err) {
 //     console.error(err);

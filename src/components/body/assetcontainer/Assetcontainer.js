@@ -14,7 +14,9 @@ function Assetcontainer(props) {
     ticker,
     company_name,
     close_price,
-    palgo_bb,
+    technical_score,
+    fundamental_score,
+    pcs,
     date_added,
   } = rowData;
 
@@ -24,7 +26,7 @@ function Assetcontainer(props) {
         <div className="palgorating-container">
           {/* <Palgorating palgorating={palgorating} /> */}
           <Palgorating 
-            palgorating="0" 
+            palgorating={pcs} 
             date_added={formatDate(date_added)}
           />
         </div>
@@ -45,8 +47,8 @@ function Assetcontainer(props) {
             microscore={microscore}
           /> */}
           <Assetscore
-            technicalscore={palgo_bb}
-            financialscore="0"
+            technicalscore={technical_score}
+            financialscore={fundamental_score}
             macroscore="0"
             microscore="0"
           />
