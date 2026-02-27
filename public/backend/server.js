@@ -44,29 +44,37 @@ pool.query('SELECT NOW()', (err, res) => {
 app.get('/assetcontainer', async (req, res) => {
   try {
     const { rows } = await pool.query(`
-      SELECT 
-        n.ticker,
-        n.company_name,
-        n.close_price,
-        n.palgo_bb,
-        n.palgo_sto,
-        n.palgo_atr,
-        n.palgo_rsi,
-        n.palgo_macd,
-        n.palgo_nop,
-        n.palgo_she,
-        n.palgo_investing,
-        n.palgo_candlestick,
-        o.technical_score,
-        o.fundamental_score,
-        o.micro_score,
-        o.macro_score,
-        o.pcs,
-        n.date_added
-      FROM nt20_palgo n
-      INNER JOIN ogs_palgo o ON n.ticker = o.ticker 
-          AND o.date_added = n.date_added
-      ORDER BY o.pcs DESC;
+SELECT 
+    n.ticker,
+    n.company_name,
+    n.close_price,
+    n.palgo_bb,
+    n.palgo_sto,
+    n.palgo_atr,
+    n.palgo_rsi,
+    n.palgo_macd,
+    n.palgo_nop,
+    n.palgo_she,
+    n.palgo_investing,
+    n.palgo_candlestick,
+    n.macro_sentiment,
+    n.micro_sentiment,
+    n.macro_summary,
+    n.palgo_candlestick,
+    o.technical_score,
+    o.fundamental_score,
+    o.micro_score,
+    o.macro_score,
+    o.pcs,
+    n.date_added
+FROM nt20_palgo n
+INNER JOIN (
+    SELECT MAX(date_added) as max_date 
+    FROM nt20_palgo
+) max_n ON n.date_added = max_n.max_date
+INNER JOIN ogs_palgo o ON n.ticker = o.ticker 
+    AND o.date_added = n.date_added
+ORDER BY o.pcs DESC;
     `);
     // have to use JOIN to get the details for each asset and take the OGS or other strategy table.
     res.json(rows);
