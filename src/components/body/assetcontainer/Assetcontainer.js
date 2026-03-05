@@ -20,6 +20,8 @@ function Assetcontainer(props) {
     macro_sentiment,
     macro_summary,
     micro_sentiment,
+    macro_score,
+    micro_score,
     date_added,
   } = rowData;
 
@@ -52,8 +54,8 @@ function Assetcontainer(props) {
           <Assetscore
             technicalscore={technical_score}
             financialscore={fundamental_score}
-            macroscore= {macro_sentiment ? [macro_sentiment] : ["Not available"]}
-            microscore= {micro_sentiment ? [micro_sentiment] : ["Not available"]}
+            macroscore= {macro_score ? [macro_score] : macro_sentiment ? [macro_sentiment] : ["Not available"]}
+            microscore= {micro_score ? [micro_score] : micro_sentiment ? [micro_sentiment] : ["Not available"]}
           />
         </div>
         <div className="assetheadlines-container">
