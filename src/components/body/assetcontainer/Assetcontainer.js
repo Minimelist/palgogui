@@ -14,6 +14,9 @@ function Assetcontainer(props) {
     ticker,
     company_name,
     close_price,
+    stop_loss,
+    max_position_size,
+    max_position_value,
     technical_score,
     fundamental_score,
     pcs,
@@ -41,6 +44,9 @@ function Assetcontainer(props) {
             assetSymbol={ticker}
             // assetType="Stock" // Placeholder, replace with actual data if available
             currentValue={close_price}
+            stop_loss={stop_loss}
+            max_position_size={max_position_size}
+            max_position_value={max_position_value}
             exchange="NASDAQ"
           />
         </div>

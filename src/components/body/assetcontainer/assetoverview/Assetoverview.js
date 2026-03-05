@@ -9,6 +9,9 @@ function Assetoverview(props) {
                 {/* <p>Asset Type: {props.assetType}</p> */}
                 <p>Current Value: ${props.currentValue}</p>
                 <p>Exchange: {props.exchange}</p>
+                <p>Recommended Stop Loss: {props.stop_loss}</p>
+                <p>Max Position Size: {props.max_position_size}</p>
+                <p>Max Position Value: {props.max_position_value}</p>
             </div>
         </div>
     )
