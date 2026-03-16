@@ -9,6 +9,7 @@ function Assetscore(props) {
                 <p>Financial Score: {props.financialscore}</p>
                 <p>Macro Score: {props.macroscore}</p>
                 <p>Micro Score: {props.microscore}</p>
+                <p>Screener: {props.screener}</p>
             </div>
         </div>
     );

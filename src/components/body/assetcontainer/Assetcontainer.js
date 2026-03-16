@@ -25,6 +25,7 @@ function Assetcontainer(props) {
     micro_sentiment,
     macro_score,
     micro_score,
+    screener,
     date_added,
   } = rowData;
 
@@ -62,6 +63,7 @@ function Assetcontainer(props) {
             financialscore={fundamental_score}
             macroscore= {macro_score ? [macro_score] : macro_sentiment ? [macro_sentiment] : ["Not available"]}
             microscore= {micro_score ? [micro_score] : micro_sentiment ? [micro_sentiment] : ["Not available"]}
+            screener={screener ? [screener] : ["Incorrect Table Reference"]}
           />
         </div>
         <div className="assetheadlines-container">
