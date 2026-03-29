@@ -1,7 +1,8 @@
 import "./Assetoverview.css";
+import { formatToTwoDecimals } from '../../../../utils/NumberRounder.js';
 
 function Assetoverview(props) {
-    return(
+    return (
         <div className="assetoverview">
             <div className="assetoverview-innercontainer">
                 <h2>Asset Overview</h2>
@@ -9,9 +10,10 @@ function Assetoverview(props) {
                 {/* <p>Asset Type: {props.assetType}</p> */}
                 <p>Current Value: ${props.currentValue}</p>
                 <p>Exchange: {props.exchange}</p>
-                <p>Recommended Stop Loss: {props.stop_loss}</p>
+                <p>Recommended Take Profit: ${formatToTwoDecimals(props.atr_takeprofit)}</p>
+                <p>Recommended Stop Loss: ${props.stop_loss}</p>
                 <p>Max Position Size: {props.max_position_size}</p>
-                <p>Max Position Value: {props.max_position_value}</p>
+                <p>Max Position Value: ${props.max_position_value}</p>
             </div>
         </div>
     )

@@ -107,6 +107,7 @@ SELECT
     n.palgo_bb,
     n.palgo_sto,
     n.palgo_atr,
+    n.atr_takeprofit,
     n.palgo_rsi,
     n.palgo_macd,
     n.palgo_nop,
