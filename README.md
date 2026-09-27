@@ -7,3 +7,5 @@ P.ALGO (Personal Algorithm) is a production-grade application I built to automat
 - **Eliminates manual analysis** – Fully automated daily pipeline replaces hours of spreadsheet work.
 - **Modular & extensible** – Plugin-based architecture supports multiple screening strategies without core code changes.
 - **Real-time delivery** – Pushes actionable insights directly to mobile via Telegram Bot API.
+
+##This is only a look into PALGO's GUI. Actual backend repo is available upon request, subject to approval.##
